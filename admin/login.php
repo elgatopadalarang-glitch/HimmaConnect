@@ -62,6 +62,12 @@ if (isset($_POST['login'])) {
 
         </form>
 
+        <!-- Tombol BACK pasti muncul karena diletakkan di luar form -->
+        <a href="index.php" 
+           class="w-full block text-center bg-gray-500 text-white py-2 rounded-lg mt-4 hover:bg-gray-600 transition">
+            Kembali
+        </a>
+
     </div>
 
 </div>
