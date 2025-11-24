@@ -74,6 +74,12 @@ function toggleSidebar() {
         <h2 class="text-3xl font-bold text-gray-800">Kelola Aspirasi</h2>
     </div>
 
+    <!-- TOMBOL KEMBALI (TAMBAHAN) -->
+    <a href="index.php" 
+       class="mb-4 inline-block px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
+        ← Kembali
+    </a>
+
     <!-- TABLE BOX -->
     <div class="bg-white shadow-lg rounded-2xl overflow-hidden border">
         <div class="overflow-x-auto">
@@ -90,48 +96,48 @@ function toggleSidebar() {
                     </tr>
                 </thead>
 
- <tbody>
-    <?php
-    if (mysqli_num_rows($aspirasi) > 0) {
+                <tbody>
+                <?php
+                if (mysqli_num_rows($aspirasi) > 0) {
 
-        $no = 1;
-        while ($row = mysqli_fetch_assoc($aspirasi)) {
-    ?>
-        <tr class="border-b hover:bg-gray-50">
-            <td class="p-4 font-semibold text-gray-700"><?= $no++ ?></td>
-            <td class="p-4"><?= htmlspecialchars($row['nama']) ?></td>
-            <td class="p-4"><?= htmlspecialchars($row['email']) ?></td>
-            <td class="p-4"><?= htmlspecialchars($row['isi']) ?></td>
-            <td class="p-4"><?= htmlspecialchars($row['tanggal']) ?></td>
-            <td class="p-4"><?= htmlspecialchars($row['balasan']) ?></td>
+                    $no = 1;
+                    while ($row = mysqli_fetch_assoc($aspirasi)) {
+                ?>
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-4 font-semibold text-gray-700"><?= $no++ ?></td>
+                        <td class="p-4"><?= htmlspecialchars($row['nama']) ?></td>
+                        <td class="p-4"><?= htmlspecialchars($row['email']) ?></td>
+                        <td class="p-4"><?= htmlspecialchars($row['isi']) ?></td>
+                        <td class="p-4"><?= htmlspecialchars($row['tanggal']) ?></td>
+                        <td class="p-4"><?= htmlspecialchars($row['balasan']) ?></td>
 
-            <td class="p-4 flex justify-center gap-2">
+                        <td class="p-4 flex justify-center gap-2">
 
-                <a href="edit_aspirasi.php?id=<?= $row['id_aspirasi'] ?>"
-                   class="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow text-sm">
-                   Detail
-                </a>
+                            <a href="edit_aspirasi.php?id=<?= $row['id_aspirasi'] ?>"
+                            class="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow text-sm">
+                                Detail
+                            </a>
 
-                <a href="hapus_aspirasi.php?id=<?= $row['id_aspirasi'] ?>"
-                   onclick="return confirm('Yakin hapus aspirasi ini?')"
-                   class="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg shadow text-sm">
-                   Hapus
-                </a>
+                            <a href="hapus_aspirasi.php?id=<?= $row['id_aspirasi'] ?>"
+                            onclick="return confirm('Yakin hapus aspirasi ini?')"
+                            class="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg shadow text-sm">
+                                Hapus
+                            </a>
 
-            </td>
-        </tr>
+                        </td>
+                    </tr>
 
-    <?php 
-        } 
-    } else { 
-    ?>
-    <tr>
-        <td colspan="7" class="p-6 text-center text-gray-500 text-lg">
-            Belum ada data aspirasi
-        </td>
-    </tr>
-    <?php } ?>
-</tbody>
+                <?php 
+                    } 
+                } else { 
+                ?>
+                <tr>
+                    <td colspan="7" class="p-6 text-center text-gray-500 text-lg">
+                        Belum ada data aspirasi
+                    </td>
+                </tr>
+                <?php } ?>
+                </tbody>
 
             </table>
         </div>

@@ -51,10 +51,10 @@ if (isset($_POST['email'])) {
                     <p class="p-3 bg-green-50 border border-green-300 rounded-lg">
                         <?= nl2br($row['balasan']) ?>
                     </p>
-                        <a href="detail_aspirasi_user.php?id=<?= $row['id_aspirasi'] ?>" 
-                            class="text-blue-600 underline hover:text-blue-800">
-                            Detail
-                            </a>
+                    <a href="detail_aspirasi_user.php?id=<?= $row['id_aspirasi'] ?>" 
+                        class="text-blue-600 underline hover:text-blue-800">
+                        Detail
+                    </a>
                 <?php } ?>
 
             </div>
@@ -68,7 +68,13 @@ if (isset($_POST['email'])) {
 
     <?php } ?>
 
-    
+    <!-- TOMBOL BACK -->
+    <div class="mt-8 text-center">
+        <a href="index.php"
+           class="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 inline-block">
+            kembali
+        </a>
+    </div>
 
 </div>
 
